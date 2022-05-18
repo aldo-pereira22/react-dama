@@ -1,0 +1,14 @@
+.tabuleiro {
+    flex-wrap: wrap;
+    width: 66.3%;
+    height: 66.3%;
+    margin: 0;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-wrap: wrap;
+}

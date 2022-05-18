@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.config {
+    width: 33%;
+    height: 33%;
+}
+
+.estilo {
+    width: 33.3%;
+    height: 33.3%;
+    background-color: crimson;
+    margin: 0;
+}
+
+.reiniciar {
+    background-color: cyan;
+    width: 33.3%;
+    height: 33.3%;
+    margin: 0;
+}
