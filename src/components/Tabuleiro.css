@@ -2,7 +2,7 @@
     flex-wrap: wrap;
     width: 66.3%;
     height: 66.3%;
-    margin: 0;
+    margin: 0 auto;
     border: 1px solid black;
     margin: 10px;
     padding: 20px;
@@ -11,4 +11,6 @@
 .campo {
     display: flex;
     flex-wrap: wrap;
+    min-width: 550px;
+    max-width: 550px;
 }

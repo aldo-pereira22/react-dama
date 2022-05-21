@@ -7,10 +7,11 @@ function container() {
       <div className="container">
 
         <Tabuleiro />
-        {/* <div className="config">
-            <Estilos />
-            <Reiniciar />
-        </div> */}
+
+        <div className="config">
+          <div className="estilo"> Estilos</div>
+          <div className="reiniciar" > Reiniciar</div>
+        </div> 
 
     
 
