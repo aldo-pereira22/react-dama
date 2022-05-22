@@ -35,12 +35,14 @@ function Tabuleiro() {
       
       <div className="campo">      
 
-        {/* { array.map( (number) => <li>{ <QuadradoPreto /> }</li>) } */}
-        {/* { array.map( (number) => <div>  { <Celula classe="celula-preta"/>  }</div>) } */}
         { array.map( (number, index) => <div>  { 
         
-             number === '0' ?  <Celula classe="celula-branca" peca="none" />  : <Celula classe="celula-preta"peca="peca" />
-          }
+            //  number === '0' ?  <Celula classe="celula-branca" peca="none" />  : <Celula classe="celula-preta"peca="peca" />
+          number === '0' ?  <Celula classe="celula-branca" index={index} />  : <Celula classe="celula-preta" index = {index} />
+
+        }
+
+
         </div>)
         
         }

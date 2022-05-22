@@ -1,13 +1,12 @@
-import Peca from './Peca'
 import './Celula.css'
-function Celula({classe, peca}) {
+function Celula({classe, index}) {
     return (
       <div className={classe}>
           
             {/* <Peca className={peca} /> */}
-            <div className={peca}></div>
+            {/* <div className={peca}></div> */}
            
-
+        {index}
       </div>
     );
   }
