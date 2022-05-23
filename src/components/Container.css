@@ -24,7 +24,24 @@
     margin-top: 37px;
     box-sizing: border-box;
     padding: 30px;
-    height: 322px;
+    height: 340px;
     width: 500px;
     border: 1px solid black;
+}
+
+.input {
+    width: 40px;
+    height: 40px;
+}
+
+.reiniciar-pecas {
+    display: flex;
+    background-color: #8FBC8F;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    margin-right: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
