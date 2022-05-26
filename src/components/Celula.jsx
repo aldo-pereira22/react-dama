@@ -35,6 +35,8 @@ function Celula({classe, index, array}) {
       pecaSelecionada.push(peca)
       divSelecionada.push(e.target)
       indexSelecionado.push(index)
+      console.log(e.target)
+
     }
 
     if(peca === 'X'){
@@ -42,12 +44,15 @@ function Celula({classe, index, array}) {
       pecaSelecionada.push(peca)
       divSelecionada.push(e.target)
       indexSelecionado.push(index)
+      console.log(e.target)
     }
+
+
 
     if(pecaSelecionada[pecaSelecionada.length - 2]){
       console.log("TEM PEÇA SELECIONADA: -2", pecaSelecionada[pecaSelecionada.length -2],'INDEX')
 
-      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XA' || pecaSelecionada[pecaSelecionada.length -2] === 'XB' )
+      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XA' )
       
       && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
         console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
@@ -66,33 +71,26 @@ function Celula({classe, index, array}) {
     }
 
 
-    // if(divSelecionada[ divSelecionada.length - 2 ]){
+    if(pecaSelecionada[pecaSelecionada.length - 2]){
+      console.log("TEM PEÇA SELECIONADA: -2", pecaSelecionada[pecaSelecionada.length -2],'INDEX')
 
-    //   const  divAnterior = divSelecionada[ divSelecionada.length - 2 ]
-    //   divAnterior.classList.remove('peca-1')
-    //   divAnterior.classList.add('none')
-    //   array[index] = 'X'
+      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XB' )
+      
+      && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
+        console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
+        divSelecionada[divSelecionada.length -2].classList.remove('peca-2')
+        divSelecionada[divSelecionada.length -2].classList.add('none')
+        array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
 
-    //   const  divAtual = divSelecionada[ divSelecionada.length - 1 ]
-    //   divAtual.classList.remove('none')
-    //   divAtual.classList.add('peca-1')
-    //   array[index] = peca
-
-
-    // }
-
-
-    // if( array[pecaSelecionada[pecaSelecionada.length - 1]] === 'X'){
-    //   // array[pecaSelecionada[pecaSelecionada.length - 2]] = 'X'
-
-    //   console.log(pecaSelecionada)
-    //   if(array[pecaSelecionada[pecaSelecionada.length - 2]] != undefined){
+        console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
+        divSelecionada[divSelecionada.length -1].classList.remove('none')
+        divSelecionada[divSelecionada.length -1].classList.add('peca-2')
+        array[index] = 'XB'
         
-        
-    //   }
-    // }
-
-
+      }else {
+        console.log("MOVIMENTO INVALIDO!")
+      }
+    }
 
 
 
