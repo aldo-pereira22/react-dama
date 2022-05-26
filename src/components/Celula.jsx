@@ -15,8 +15,7 @@ function Celula({classe, index, array}) {
     // e.target.classList.remove('peca-1');
     // e.target.classList.add('none');
     let peca = array[index]
-    pecaSelecionada.push(peca)
-    divSelecionada.push(e.target)
+ 
    
     
 
@@ -25,34 +24,50 @@ function Celula({classe, index, array}) {
     // divAnterior[divAnterior.length - 2].classList.remove('peca-1')
     // divAnterior[divAnterior.length - 2].classList.add('none')
   
-    if(peca === '0' ) return
+    if(peca === '0' ){
+      console.log("Vc clicou em uma peça: ", peca, " Movimento é inválido")
+      return
+    } 
+      
+    if(peca === 'XA' || peca == 'XB'){
+      console.log("Vc clicou em uma peca:",peca)
+      pecaSelecionada.push(peca)
+      divSelecionada.push(e.target)
+    }
 
-    if(divSelecionada[ divSelecionada.length - 2 ]){
-      const  divAnterior = divSelecionada[ divSelecionada.length - 2 ]
-    
-      divAnterior.classList.remove('peca-1')
-      divAnterior.classList.add('none')
-      array[index] = 'X'
-
-
-      const  divAtual = divSelecionada[ divSelecionada.length - 1 ]
-      divAtual.classList.remove('none')
-      divAtual.classList.add('peca-1')
-      array[index] = peca
-
-
+    if(peca === 'X'){
+      console.log("Vc clicou em uma peca:",peca)
+      pecaSelecionada.push(peca)
+      divSelecionada.push(e.target)
     }
 
 
-    if( array[pecaSelecionada[pecaSelecionada.length - 1]] === 'X'){
-      // array[pecaSelecionada[pecaSelecionada.length - 2]] = 'X'
 
-      console.log(pecaSelecionada)
-      if(array[pecaSelecionada[pecaSelecionada.length - 2]] != undefined){
+    // if(divSelecionada[ divSelecionada.length - 2 ]){
+
+    //   const  divAnterior = divSelecionada[ divSelecionada.length - 2 ]
+    //   divAnterior.classList.remove('peca-1')
+    //   divAnterior.classList.add('none')
+    //   array[index] = 'X'
+
+    //   const  divAtual = divSelecionada[ divSelecionada.length - 1 ]
+    //   divAtual.classList.remove('none')
+    //   divAtual.classList.add('peca-1')
+    //   array[index] = peca
+
+
+    // }
+
+
+    // if( array[pecaSelecionada[pecaSelecionada.length - 1]] === 'X'){
+    //   // array[pecaSelecionada[pecaSelecionada.length - 2]] = 'X'
+
+    //   console.log(pecaSelecionada)
+    //   if(array[pecaSelecionada[pecaSelecionada.length - 2]] != undefined){
         
         
-      }
-    }
+    //   }
+    // }
 
 
 
