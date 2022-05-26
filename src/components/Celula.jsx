@@ -12,12 +12,9 @@ function Celula({classe, index, array}) {
   function clique(e){
 
     
-    // e.target.classList.remove('peca-1');
-    // e.target.classList.add('none');
+
     let peca = array[index]
   
- 
-   
     
 
     // divAnterior.push(e.target)
@@ -50,46 +47,55 @@ function Celula({classe, index, array}) {
 
 
     if(pecaSelecionada[pecaSelecionada.length - 2]){
-      console.log("TEM PEÇA SELECIONADA: -2", pecaSelecionada[pecaSelecionada.length -2],'INDEX')
-
-      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XA' )
+     
+      let referencia = indexSelecionado[indexSelecionado.length - 2] - indexSelecionado[indexSelecionado.length - 1] 
+      if(Math.abs(referencia) === 7 || Math.abs(referencia) === 9){
       
-      && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
-        console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
-        divSelecionada[divSelecionada.length -2].classList.remove('peca-1')
-        divSelecionada[divSelecionada.length -2].classList.add('none')
-        array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
+        if( (pecaSelecionada[pecaSelecionada.length -2] === 'XA' )
+      
+        && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
+  
+          console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
+          divSelecionada[divSelecionada.length -2].classList.remove('peca-1')
+          divSelecionada[divSelecionada.length -2].classList.add('none')
+          array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
+  
+          console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
+          divSelecionada[divSelecionada.length -1].classList.remove('none')
+          divSelecionada[divSelecionada.length -1].classList.add('peca-1')
 
-        console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
-        divSelecionada[divSelecionada.length -1].classList.remove('none')
-        divSelecionada[divSelecionada.length -1].classList.add('peca-1')
-        array[index] = 'XA'
-        
+          array[index] = 'XA'
+          
+        }
+
       }else {
-        console.log("MOVIMENTO INVALIDO!")
+        console.log("Não pode mudar para essa posição!")
       }
+
+
     }
 
 
     if(pecaSelecionada[pecaSelecionada.length - 2]){
-      console.log("TEM PEÇA SELECIONADA: -2", pecaSelecionada[pecaSelecionada.length -2],'INDEX')
-
-      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XB' )
+      let referencia = indexSelecionado[indexSelecionado.length - 2] - indexSelecionado[indexSelecionado.length - 1] 
+      if(Math.abs(referencia) === 7 || Math.abs(referencia) === 9){
+        if( (pecaSelecionada[pecaSelecionada.length -2] === 'XB' )
       
-      && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
-        console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
-        divSelecionada[divSelecionada.length -2].classList.remove('peca-2')
-        divSelecionada[divSelecionada.length -2].classList.add('none')
-        array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
-
-        console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
-        divSelecionada[divSelecionada.length -1].classList.remove('none')
-        divSelecionada[divSelecionada.length -1].classList.add('peca-2')
-        array[index] = 'XB'
-        
-      }else {
-        console.log("MOVIMENTO INVALIDO!")
+        && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
+          console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
+          divSelecionada[divSelecionada.length -2].classList.remove('peca-2')
+          divSelecionada[divSelecionada.length -2].classList.add('none')
+          array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
+  
+          console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
+          divSelecionada[divSelecionada.length -1].classList.remove('none')
+          divSelecionada[divSelecionada.length -1].classList.add('peca-2')
+          array[index] = 'XB'
+          
+        } 
       }
+
+
     }
 
 
