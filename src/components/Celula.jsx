@@ -3,7 +3,7 @@ import './Celula.css'
 
 let pecaSelecionada = []
 let divSelecionada = []
-let index = []
+let indexSelecionado = []
 
 function Celula({classe, index, array}) {
 
@@ -15,6 +15,7 @@ function Celula({classe, index, array}) {
     // e.target.classList.remove('peca-1');
     // e.target.classList.add('none');
     let peca = array[index]
+  
  
    
     
@@ -30,17 +31,39 @@ function Celula({classe, index, array}) {
     } 
       
     if(peca === 'XA' || peca == 'XB'){
-      console.log("Vc clicou em uma peca:",peca)
+      console.log("Vc clicou em uma peca:",peca, " index:", index)
       pecaSelecionada.push(peca)
       divSelecionada.push(e.target)
+      indexSelecionado.push(index)
     }
 
     if(peca === 'X'){
       console.log("Vc clicou em uma peca:",peca)
       pecaSelecionada.push(peca)
       divSelecionada.push(e.target)
+      indexSelecionado.push(index)
     }
 
+    if(pecaSelecionada[pecaSelecionada.length - 2]){
+      console.log("TEM PEÇA SELECIONADA: -2", pecaSelecionada[pecaSelecionada.length -2],'INDEX')
+
+      if( (pecaSelecionada[pecaSelecionada.length -2] === 'XA' || pecaSelecionada[pecaSelecionada.length -2] === 'XB' )
+      
+      && pecaSelecionada[pecaSelecionada.length -1] === 'X'){
+        console.log("DIV ANTERIOR", divSelecionada[divSelecionada.length -2])
+        divSelecionada[divSelecionada.length -2].classList.remove('peca-1')
+        divSelecionada[divSelecionada.length -2].classList.add('none')
+        array[indexSelecionado[indexSelecionado.length - 2]] = 'X'
+
+        console.log("DIV ATUAL", divSelecionada[divSelecionada.length -1])
+        divSelecionada[divSelecionada.length -1].classList.remove('none')
+        divSelecionada[divSelecionada.length -1].classList.add('peca-1')
+        array[index] = 'XA'
+        
+      }else {
+        console.log("MOVIMENTO INVALIDO!")
+      }
+    }
 
 
     // if(divSelecionada[ divSelecionada.length - 2 ]){
